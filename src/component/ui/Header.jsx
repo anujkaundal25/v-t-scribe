@@ -83,7 +83,7 @@ export default function Header() {
       </div>
 
       {/* 2. Main Navigation Bar */}
-      <div className="bg-[#014f92]/95 backdrop-blur-md border-b border-[#013d72] py-3.5 px-6 md:px-12">
+      <div className="bg-[#014f92] backdrop-blur-md border-b border-[#013d72] py-3.5 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
           {/* Logo Container */}
