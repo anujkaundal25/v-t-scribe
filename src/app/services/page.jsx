@@ -37,6 +37,8 @@ import {
 } from 'react-icons/fa'
 import Link from 'next/link'
 
+// Create a motion-wrapped Link component for Next.js compatibility
+const MotionLink = motion.create(Link)
 
 // Frame Motion Animation Variants
 const containerVariants = {
@@ -386,7 +388,7 @@ export default function ServicesPage() {
             </motion.div>
 
             <div className="pt-2">
-              <motion.Link 
+              <MotionLink 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/contact" 
@@ -394,7 +396,7 @@ export default function ServicesPage() {
               >
                 <span>Start Your 1-Week Free Trial</span>
                 <FaArrowRight className="text-xs" />
-              </motion.Link>
+              </MotionLink>
             </div>
           </motion.div>
 

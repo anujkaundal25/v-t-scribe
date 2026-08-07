@@ -21,6 +21,9 @@ import {
 } from 'react-icons/fa'
 import Link from 'next/link'
 
+// Create a motion-wrapped Link component for Next.js compatibility
+const MotionLink = motion.create(Link)
+
 // Framer Motion Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -374,15 +377,15 @@ export default function WhyUsPage() {
               <h3 className="text-2xl font-bold">Ready to reduce transcription costs by 30%?</h3>
               <p className="text-sky-200 text-xs sm:text-sm mt-1">Get started with a 1-week free trial. No obligation required.</p>
             </div>
-            <motion.Link 
+            <MotionLink 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#contact" 
+              href="/contact" 
               className="bg-sky-500 hover:bg-sky-400 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-sky-500/30 transition-all shrink-0 text-sm flex items-center gap-2"
             >
               <span>Claim Your Free Trial</span>
               <FaArrowRight className="text-xs" />
-            </motion.Link>
+            </MotionLink>
           </motion.div>
 
         </div>
