@@ -33,7 +33,7 @@ function Contact() {
 
   return (
     <div 
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat text-slate-800 pt-10 mt-10 pb-20 select-none overflow-hidden"
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat text-slate-800 pt-10 mt-10 pb-20 overflow-hidden"
       style={{ 
         backgroundImage: `url('https://images.pexels.com/photos/28102632/pexels-photo-28102632.jpeg')` 
       }}

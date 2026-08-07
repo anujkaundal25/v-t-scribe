@@ -67,7 +67,7 @@ export default function KeyFeaturesSection() {
   ]
 
   return (
-    <section className="py-20 bg-slate-50/80 relative overflow-hidden select-none">
+    <section className="py-20 bg-slate-50/80 relative overflow-hidden">
       
       {/* Top Left Decorative Waves Pattern */}
       <div className="absolute top-53 left-6 sm:left-12 opacity-20 pointer-events-none">

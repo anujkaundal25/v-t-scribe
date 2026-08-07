@@ -81,7 +81,7 @@ const promiseItems = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-slate-50 text-slate-800 font-sans min-h-screen pt-20 pb-20 select-none overflow-x-hidden">
+    <div className="bg-slate-50 text-slate-800 font-sans min-h-screen pt-20 pb-20 overflow-x-hidden">
       
       {/* SECTION 1: HERO & OUR STORY */}
       <section className="relative bg-gradient-to-b from-[#002742] via-[#013563] to-[#014f92] text-white py-16 sm:py-20 lg:py-24 px-6 overflow-hidden flex items-center min-h-[50vh]">

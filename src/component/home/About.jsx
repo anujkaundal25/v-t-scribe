@@ -45,7 +45,7 @@ export default function AboutSection() {
 
 
   return (
-    <section className="py-20 text-slate-900 select-none">
+    <section className="py-20 text-slate-900">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}

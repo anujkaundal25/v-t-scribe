@@ -144,7 +144,7 @@ const workflowSteps = [
 
 export default function WhyUsPage() {
   return (
-    <div className="bg-slate-50 text-slate-800 font-sans min-h-screen pt-24 pb-20 select-none overflow-x-hidden">
+    <div className="bg-slate-50 text-slate-800 font-sans min-h-screen pt-24 pb-20 overflow-x-hidden">
       
       {/* SECTION 1: HERO */}
       <section className="relative bg-gradient-to-b from-[#002742] via-[#013563] to-[#014f92] text-white py-20 px-6 overflow-hidden">

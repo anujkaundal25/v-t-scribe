@@ -50,7 +50,7 @@ const floatingBadgeVariants = {
 export default function HeroSection() {
   return (
     <div
-      className="relative min-h-[92vh] flex items-center bg-cover bg-center bg-no-repeat overflow-hidden pt-28 lg:pt-36 pb-20 select-none"
+      className="relative min-h-[92vh] flex items-center bg-cover bg-center bg-no-repeat overflow-hidden pt-28 lg:pt-36 pb-20"
       style={{
         backgroundImage: `url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop')`,
       }}
