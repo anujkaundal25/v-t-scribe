@@ -184,7 +184,7 @@ export default function HeroSection() {
               >
                 <FaLaptopMedical className="text-sky-600 text-lg mb-1" />
                 <div className="text-sm font-bold text-slate-900">
-                  DSS & Digital
+                  <h3>DSS & Digital</h3>
                 </div>
                 <div className="text-[11px] text-slate-500">
                   Flex Dictaphone Input
@@ -197,7 +197,7 @@ export default function HeroSection() {
               >
                 <FaUsers className="text-sky-600 text-lg mb-1" />
                 <div className="text-sm font-bold text-slate-900">
-                  2-Tier QA Review
+                  <h3>2-Tier QA Review</h3>
                 </div>
                 <div className="text-[11px] text-slate-500">
                   Level 1 & Level 2 QA

@@ -39,6 +39,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent background body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full shadow-lg transition-all duration-300">
       
@@ -68,7 +77,7 @@ export default function Header() {
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-[#014f92] backdrop-blur-md border-b border-[#013d72] py-3.5 px-6 md:px-12">
+      <div className="bg-[#014f92] backdrop-blur-md border-b border-[#013d72] py-3.5 px-6 md:px-12 relative z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
           {/* Logo */}
@@ -104,50 +113,72 @@ export default function Header() {
           {/* Mobile Navigation Menu Toggle */}
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="md:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-[#013d72] transition-colors"
+            className="md:hidden text-white focus:outline-none p-2 rounded-lg hover:bg-[#013d72] transition-colors z-50"
             aria-label="Toggle Navigation Menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
-      {isOpen && (
-        <div className="fixed inset-0 top-[70px] z-40 bg-slate-900/60 backdrop-blur-sm md:hidden flex justify-end">
-          <div className="w-full max-w-sm bg-[#002742] h-full shadow-2xl p-6 flex flex-col justify-between text-white">
-            <div className="space-y-4">
-              {headerData.navLinks.map((link, index) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link 
-                    key={index} 
-                    href={link.href} 
-                    onClick={() => setIsOpen(false)}
-                    className={`block py-2 border-b border-[#013868] text-lg font-semibold ${
-                      isActive ? 'text-sky-300' : 'text-white hover:text-sky-200'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </div>
+      {/* Mobile Navigation Drawer Overlay & Content */}
+      <div 
+        id="mobile-menu"
+        className={`fixed inset-0 top-0 z-40 md:hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        {/* Backdrop overlay */}
+        <div 
+          onClick={() => setIsOpen(false)}
+          className={`absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300 ${
+            isOpen ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
 
-            {/* Mobile Contact Quick Links */}
-            <div className="pt-6 border-t border-[#013868] space-y-3 text-sm text-sky-200">
-              <a href={`tel:${headerData.topBar.phone}`} className="flex items-center gap-3 hover:text-white">
-                <FaPhoneAlt className="text-sky-400" />
-                <span>{headerData.topBar.phone}</span>
-              </a>
-              <a href={`mailto:${headerData.topBar.email}`} className="flex items-center gap-3 hover:text-white">
-                <FaEnvelope className="text-sky-400" />
-                <span>{headerData.topBar.email}</span>
-              </a>
+        {/* Sliding Panel */}
+        <div 
+          className={`absolute top-0 right-0 w-full max-w-sm bg-[#002742] h-screen shadow-2xl p-6 pt-24 flex flex-col justify-between text-white transition-transform duration-300 ease-in-out ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="space-y-4">
+            {headerData.navLinks.map((link, index) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link 
+                  key={index} 
+                  href={link.href} 
+                  onClick={() => setIsOpen(false)}
+                  className={`block py-2.5 border-b border-[#013868] text-lg font-semibold transition-colors duration-200 ${
+                    isActive ? 'text-sky-300 border-sky-400 pl-2' : 'text-white hover:text-sky-200 hover:pl-2'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Mobile Contact Quick Links */}
+          <div className="pt-6 pb-8 border-t border-[#013868] space-y-4 text-sm text-sky-200">
+            <a href={`tel:${headerData.topBar.phone}`} className="flex items-center gap-3 hover:text-white transition-colors">
+              <FaPhoneAlt className="text-sky-400 shrink-0" />
+              <span>{headerData.topBar.phone}</span>
+            </a>
+            <a href={`mailto:${headerData.topBar.email}`} className="flex items-center gap-3 hover:text-white transition-colors">
+              <FaEnvelope className="text-sky-400 shrink-0" />
+              <span>{headerData.topBar.email}</span>
+            </a>
+            <div className="flex items-center gap-3 text-xs text-sky-300/80 pt-2">
+              <FaClock className="text-emerald-400 shrink-0" />
+              <span>{headerData.topBar.hours}</span>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
