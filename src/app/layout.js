@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${poppins.variable} h-full antialiased`}
+      className={`${cinzel.variable} ${poppins.variable} h-full antialiased scroll-smooth`}
     >
       <body>
         <Header />
