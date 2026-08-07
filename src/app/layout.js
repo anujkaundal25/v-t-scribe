@@ -15,8 +15,12 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "MT Scribe - Precision Medical Transcription Services",
-  description: "99.9% accurate AAMT-compliant medical transcription services across Canada and the USA.",
+  title: "V T Scribe - Precision Medical Transcription Services",
+  description:
+    "99.9% accurate AAMT-compliant medical transcription services across Canada and the USA.",
+  icons: {
+    icon: "/fav.webp",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -25,7 +29,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${cinzel.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body>
         <Header />
         {children}
         <Footer />

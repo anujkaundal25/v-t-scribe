@@ -11,6 +11,7 @@ import {
   FaBars,
   FaArrowRight
 } from 'react-icons/fa';
+import Link from 'next/link';
 
 const headerData = {
   brand: {
@@ -87,7 +88,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           
           {/* Logo Container */}
-          <a href={headerData.brand.url} className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center shrink-0">
             <Image 
               src="/logo.webp" 
               alt={headerData.brand.name} 
@@ -96,7 +97,7 @@ export default function Header() {
               className="h-12 w-auto object-contain"
               priority
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation Links - Active State Border */}
           <nav className="hidden md:flex items-center gap-8 shrink-0">

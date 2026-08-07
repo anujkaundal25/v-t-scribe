@@ -33,9 +33,17 @@ function Footer() {
   ]
 
   return (
-    <footer className="relative bg-[#014f92] text-white overflow-hidden border-t border-white/10 select-none">
+    <footer 
+      className="relative text-white overflow-hidden border-t border-white/10 select-none bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url('https://images.pexels.com/photos/17071360/pexels-photo-17071360.jpeg')`
+      }}
+    >
+      {/* Dark Overlay to ensure readability */}
+      <div className="absolute inset-0 bg-[#014f92]/90 backdrop-blur-[2px]" />
+
       {/* Background Subtle Pattern & Glow Effects */}
-      <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Footer Content */}
@@ -46,7 +54,7 @@ function Footer() {
           <div className="lg:col-span-4 space-y-4">
             {/* Logo */}
             <Link href="/" className="inline-flex items-center gap-3 group">
-              <img src="/logo.webp" alt="" className="h-15 md:h-15 w-auto object-contain" />
+              <img src="/logo.webp" alt="Logo" className="h-15 md:h-15 w-auto object-contain" />
             </Link>
 
             {/* Description */}
@@ -134,7 +142,7 @@ function Footer() {
 
               <div className="flex items-center gap-3 text-blue-100/80">
                 <FaEnvelope className="text-blue-300 text-sm flex-shrink-0" />
-                <a href="mailto:info@meditranshub.com" className="hover:text-white transition-colors">
+                <a href="mailto:info@vtscribe.com" className="hover:text-white transition-colors">
                   info@vtscribe.com
                 </a>
               </div>

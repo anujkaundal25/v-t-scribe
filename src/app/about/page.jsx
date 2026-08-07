@@ -11,19 +11,29 @@ import {
   FaStethoscope, 
   FaLock, 
   FaChartLine, 
-  FaFileInvoice, 
   FaServer, 
   FaArrowRight, 
   FaHandshake,
   FaHeadset,
-  FaPercent
+  FaPercent,
+  FaBone,
+  FaBrain,
+  FaBed,
+  FaLungs,
+  FaXRay,
+  FaUserMd,
+  FaFemale,
+  FaHeartbeat,
+  FaSyringe
 } from 'react-icons/fa'
+import Link from 'next/link'
 
+// Framer Motion Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 }
   }
 }
 
@@ -37,9 +47,16 @@ const itemVariants = {
 }
 
 const specialties = [
-  "Orthopedics", "Neurology", "Sleep Studies", "Respiratory Medicine",
-  "Radiology", "Internal Medicine", "Obstetrics & Gynecology",
-  "Cardiology", "Surgery", "Gastroenterology"
+  { name: "Orthopedics", icon: FaBone },
+  { name: "Neurology", icon: FaBrain },
+  { name: "Sleep Studies", icon: FaBed },
+  { name: "Respiratory", icon: FaLungs },
+  { name: "Radiology", icon: FaXRay },
+  { name: "Internal Medicine", icon: FaUserMd },
+  { name: "OB/GYN", icon: FaFemale },
+  { name: "Cardiology", icon: FaHeartbeat },
+  { name: "Surgery", icon: FaSyringe },
+  { name: "Gastroenterology", icon: FaStethoscope }
 ]
 
 const commitmentHighlights = [
@@ -64,35 +81,31 @@ const promiseItems = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-slate-50 text-slate-800 font-sans min-h-screen pt-24 pb-20">
+    <div className="bg-slate-50 text-slate-800 font-sans min-h-screen pt-20 pb-20 select-none overflow-x-hidden">
       
       {/* SECTION 1: HERO & OUR STORY */}
-      <section className="relative bg-gradient-to-b from-[#002742] via-[#013563] to-[#014f92] text-white py-20 px-6 overflow-hidden">
+      <section className="relative bg-gradient-to-b from-[#002742] via-[#013563] to-[#014f92] text-white py-16 sm:py-20 lg:py-24 px-6 overflow-hidden flex items-center min-h-[50vh]">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]" />
         
-        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
           
           <motion.div 
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 space-y-5"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 bg-sky-400/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-sky-300/30 text-xs font-semibold text-sky-200 uppercase tracking-widest">
-              <FaShieldAlt className="text-sky-300" />
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 bg-sky-400/20 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-sky-300/30 text-[11px] font-semibold text-sky-200 uppercase tracking-widest">
+              <FaShieldAlt className="text-sky-300 animate-pulse" />
               <span>18+ Years of Medical Transcription Excellence</span>
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+            <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
               Trusted Medical Transcription Experts for Over <span className="text-sky-300">18 Years</span>
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-lg sm:text-xl text-sky-100/90 font-light leading-relaxed">
+            <motion.p variants={itemVariants} className="text-base sm:text-xl text-sky-100/90 font-light leading-relaxed">
               At V-T Scribe, we help healthcare providers across Canada and the USA transform voice dictations into accurate, physician-ready medical documentation.
-            </motion.p>
-
-            <motion.p variants={itemVariants} className="text-sm sm:text-base text-sky-100/80 leading-relaxed">
-              Based in Dehradun, India, we have spent more than 18 years building a reputation for precision, reliability, and confidentiality. Every day, our experienced team processes thousands of medical transcription lines across multiple specialties while maintaining exceptional quality standards. Our commitment is simple—deliver accurate reports on time so healthcare professionals can focus on patient care instead of paperwork.
             </motion.p>
           </motion.div>
 
@@ -101,35 +114,35 @@ export default function AboutPage() {
             className="lg:col-span-5"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl shadow-2xl space-y-6">
-              <h2 className="text-2xl font-bold text-white border-b border-white/15 pb-3">At a Glance</h2>
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 sm:p-8 rounded-2xl shadow-2xl space-y-4">
+              <h2 className="text-xl font-bold text-white border-b border-white/15 pb-3">At a Glance</h2>
               
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/10 p-4 rounded-2xl border border-white/10">
-                  <div className="text-3xl font-black text-emerald-400">6,000+</div>
-                  <div className="text-xs text-sky-100 mt-1">Lines Processed / Day</div>
-                </div>
+              <div className="grid grid-cols-2 gap-3">
+                <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 p-3.5 rounded-xl border border-white/10 transition-colors hover:bg-white/15 cursor-default">
+                  <div className="text-2xl sm:text-3xl font-black text-emerald-400">6,000+</div>
+                  <div className="text-[11px] text-sky-100 mt-0.5">Lines Processed / Day</div>
+                </motion.div>
 
-                <div className="bg-white/10 p-4 rounded-2xl border border-white/10">
-                  <div className="text-3xl font-black text-sky-300">+2,000</div>
-                  <div className="text-xs text-sky-100 mt-1">Daily Line Reserve Capacity</div>
-                </div>
+                <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 p-3.5 rounded-xl border border-white/10 transition-colors hover:bg-white/15 cursor-default">
+                  <div className="text-2xl sm:text-3xl font-black text-sky-300">+2,000</div>
+                  <div className="text-[11px] text-sky-100 mt-0.5">Daily Line Reserve</div>
+                </motion.div>
 
-                <div className="bg-white/10 p-4 rounded-2xl border border-white/10">
-                  <div className="text-3xl font-black text-amber-300">99.9%</div>
-                  <div className="text-xs text-sky-100 mt-1">AAMT Quality Score</div>
-                </div>
+                <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 p-3.5 rounded-xl border border-white/10 transition-colors hover:bg-white/15 cursor-default">
+                  <div className="text-2xl sm:text-3xl font-black text-amber-300">99.9%</div>
+                  <div className="text-[11px] text-sky-100 mt-0.5">AAMT Quality Score</div>
+                </motion.div>
 
-                <div className="bg-white/10 p-4 rounded-2xl border border-white/10">
-                  <div className="text-3xl font-black text-sky-200">25+</div>
-                  <div className="text-xs text-sky-100 mt-1">Skilled Personnel</div>
-                </div>
+                <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 p-3.5 rounded-xl border border-white/10 transition-colors hover:bg-white/15 cursor-default">
+                  <div className="text-2xl sm:text-3xl font-black text-sky-200">25+</div>
+                  <div className="text-[11px] text-sky-100 mt-0.5">Skilled Personnel</div>
+                </motion.div>
               </div>
 
-              <div className="flex items-center gap-3 pt-2 text-xs text-sky-200 border-t border-white/15">
-                <FaLock className="text-emerald-400 text-base shrink-0" />
+              <div className="flex items-center gap-2 pt-3 text-[11px] text-sky-200 border-t border-white/15">
+                <FaLock className="text-emerald-400 text-sm shrink-0" />
                 <span>Full HIPAA Compliance • Signed Business Associate Agreements</span>
               </div>
             </div>
@@ -140,7 +153,13 @@ export default function AboutPage() {
 
       {/* SECTION 2: WHO WE ARE */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+        >
           <span className="text-xs font-bold uppercase tracking-widest text-sky-600">Who We Are</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
             Accuracy, Experience & Healthcare Excellence
@@ -148,10 +167,16 @@ export default function AboutPage() {
           <p className="text-slate-600 text-base sm:text-lg">
             We are a dedicated team of medical transcription professionals, quality analysts, and technology specialists committed to delivering dependable documentation services.
           </p>
-        </div>
+        </motion.div>
 
         {/* What Makes Us Different Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+        >
           {[
             { icon: FaClock, title: "18+ Years Experience", desc: "Longstanding expertise serving medical clinics and transcription firms." },
             { icon: FaChartLine, title: "6,000+ Daily Lines", desc: "Proven high-volume line capacity plus 2,000 line daily buffer." },
@@ -164,20 +189,28 @@ export default function AboutPage() {
           ].map((item, idx) => (
             <motion.div 
               key={idx}
-              whileHover={{ y: -5 }}
-              className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all space-y-3"
+              variants={itemVariants}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 space-y-3 group cursor-pointer"
             >
-              <div className="w-12 h-12 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center text-xl">
+              <div className="w-12 h-12 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center text-xl group-hover:bg-sky-600 group-hover:text-white transition-colors duration-300">
                 <item.icon />
               </div>
-              <h3 className="text-lg font-bold text-slate-800">{item.title}</h3>
+              <h3 className="text-lg font-bold text-slate-800 group-hover:text-sky-600 transition-colors">{item.title}</h3>
               <p className="text-slate-600 text-xs leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Medical Specialties Supported */}
-        <div className="bg-gradient-to-r from-sky-900 to-[#002742] text-white p-8 sm:p-12 rounded-3xl shadow-xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-r from-sky-900 to-[#002742] text-white p-8 sm:p-12 rounded-3xl shadow-xl"
+        >
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-sky-800 pb-6">
             <div>
               <div className="flex items-center gap-2 text-sky-400 font-bold text-sm uppercase tracking-wider mb-1">
@@ -193,21 +226,43 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {specialties.map((spec, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-md border border-white/10 px-4 py-3 rounded-xl text-center text-xs sm:text-sm font-semibold text-sky-100 hover:bg-white/20 transition-colors">
-                {spec}
-              </div>
-            ))}
-          </div>
-        </div>
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3"
+          >
+            {specialties.map((spec, i) => {
+              const SpecIcon = spec.icon
+              return (
+                <motion.div 
+                  key={i} 
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  className="bg-white/10 backdrop-blur-md border border-white/10 px-4 py-3.5 rounded-xl flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-sky-100 hover:bg-white/20 transition-colors cursor-default"
+                >
+                  <SpecIcon className="text-sky-300 text-base shrink-0" />
+                  <span>{spec.name}</span>
+                </motion.div>
+              )
+            })}
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* SECTION 3: OUR COMMITMENT */}
       <section className="py-20 bg-slate-100/80 border-y border-slate-200 px-6">
         <div className="max-w-7xl mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto mb-16 space-y-3"
+          >
             <span className="text-xs font-bold uppercase tracking-widest text-sky-600">Our Commitment</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
               Built Around Quality, Security & Reliability
@@ -215,27 +270,45 @@ export default function AboutPage() {
             <p className="text-slate-600 text-base sm:text-lg">
               Every report we produce follows a structured quality assurance process designed to ensure consistency, accuracy, and absolute confidentiality.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {commitmentHighlights.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+              <motion.div 
+                key={index} 
+                variants={itemVariants}
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              >
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <FaCheckCircle className="text-emerald-500 text-lg shrink-0" />
-                    <h3 className="font-bold text-slate-900 text-sm sm:text-base">{item.title}</h3>
+                    <FaCheckCircle className="text-emerald-500 text-lg shrink-0 group-hover:scale-110 transition-transform" />
+                    <h3 className="font-bold text-slate-900 text-sm sm:text-base group-hover:text-sky-600 transition-colors">{item.title}</h3>
                   </div>
                   <p className="text-slate-600 text-xs leading-relaxed pl-7">{item.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="mt-12 text-center bg-white p-6 rounded-2xl border border-slate-200 max-w-3xl mx-auto">
-            <p className="text-slate-700 text-sm sm:text-base font-medium">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-12 text-center bg-white p-6 rounded-2xl border border-slate-200 shadow-sm max-w-3xl mx-auto"
+          >
+            <p className="text-slate-700 text-sm sm:text-base font-medium italic">
               "Our goal is to become a seamless, long-term extension of your healthcare documentation team by delivering dependable transcription services every day."
             </p>
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -244,7 +317,13 @@ export default function AboutPage() {
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <div className="lg:col-span-6 space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-6 space-y-6"
+          >
             <span className="text-xs font-bold uppercase tracking-widest text-sky-600">Why Choose Us</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
               More Than a Service—A Reliable Transcription Partner
@@ -259,29 +338,43 @@ export default function AboutPage() {
             </p>
 
             <div className="pt-2">
-              <a 
-                href="#contact" 
-                className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all active:scale-95 text-sm"
-              >
-                <span>Request a Free Trial Week</span>
-                <FaArrowRight className="text-xs" />
-              </a>
+              <Link href="/contact" passHref legacyBehavior>
+                <motion.a 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-sky-500/25 transition-all text-sm cursor-pointer"
+                >
+                  <span>Request a Free Trial Week</span>
+                  <FaArrowRight className="text-xs" />
+                </motion.a>
+              </Link>
             </div>
-          </div>
+          </motion.div>
 
           {/* Our Promise Cards Grid */}
-          <div className="lg:col-span-6">
-            <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-6"
+          >
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
               <h3 className="text-xl font-bold text-slate-900 mb-2">Our Promise to Every Client</h3>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {promiseItems.map((promise, idx) => (
-                  <div key={idx} className={`p-4 rounded-2xl border ${promise.bg} flex items-center gap-3.5 transition-transform hover:scale-[1.02]`}>
+                  <motion.div 
+                    key={idx} 
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className={`p-4 rounded-2xl border ${promise.bg} flex items-center gap-3.5 transition-shadow hover:shadow-md cursor-pointer`}
+                  >
                     <div className={`p-2.5 rounded-xl bg-white shadow-sm ${promise.color}`}>
                       <promise.icon className="text-lg" />
                     </div>
                     <span className="font-bold text-slate-800 text-sm">{promise.title}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
@@ -290,7 +383,7 @@ export default function AboutPage() {
                 <span className="font-bold text-emerald-400 uppercase tracking-wider">$0 Extra Cost</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </section>
