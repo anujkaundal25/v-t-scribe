@@ -70,7 +70,7 @@ export default function ContactUsPage() {
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl font-black leading-tight tracking-tight">
-              Contact <span className="text-sky-300">V-T Scribe</span>
+              Contact <span className="text-sky-300">Scribers</span>
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-lg sm:text-xl text-sky-100/90 font-light leading-relaxed">
@@ -121,7 +121,7 @@ export default function ContactUsPage() {
                   <div>
                     <p className="text-xs font-bold uppercase text-slate-400">Headquarters</p>
                     <p className="text-slate-800 text-xs sm:text-sm font-semibold">
-                      V-T Scribe Transcription Services
+                      Scribers Transcription Services
                     </p>
                     <p className="text-slate-500 text-xs">
                       Dehradun, Uttarakhand, India

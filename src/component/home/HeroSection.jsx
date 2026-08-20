@@ -99,7 +99,7 @@ export default function HeroSection() {
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.15] tracking-tight"
           >
-            V-T Scribe Medical <br />
+            Scribers Medical <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-sky-100 to-white">
               Transcription Services
             </span>

@@ -28,7 +28,7 @@ export default function AboutSection() {
   const tabContents = {
     vision: {
       title: "18+ Years of Medical Transcription Excellence",
-      description: "Operating out of Dehradun, India, V-T Scribe delivers high-precision transcription tailored specifically to medical practices across Canada and the USA. We combine human expertise with disciplined multi-tier quality assurance workflows to eliminate documentation burdens for healthcare providers.",
+      description: "Operating out of Dehradun, India, Scribers delivers high-precision transcription tailored specifically to medical practices across Canada and the USA. We combine human expertise with disciplined multi-tier quality assurance workflows to eliminate documentation burdens for healthcare providers.",
       bullets: ["AAMT Benchmark Guidelines", "Doctor-Specific Preferences", "Dedicated Account Managers"]
     },
     security: {

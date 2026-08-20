@@ -105,7 +105,7 @@ export default function AboutPage() {
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-base sm:text-xl text-sky-100/90 font-light leading-relaxed">
-              At V-T Scribe, we help healthcare providers across Canada and the USA transform voice dictations into accurate, physician-ready medical documentation.
+              At Scribers, we help healthcare providers across Canada and the USA transform voice dictations into accurate, physician-ready medical documentation.
             </motion.p>
           </motion.div>
 
@@ -330,7 +330,7 @@ export default function AboutPage() {
             </h2>
             
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Healthcare organizations choose V-T Scribe because we deliver measurable value beyond transcription. We help clients reduce operational costs by at least 30%, improve turnaround times, maintain strict patient confidentiality, and simplify documentation workflows.
+              Healthcare organizations choose Scribers because we deliver measurable value beyond transcription. We help clients reduce operational costs by at least 30%, improve turnaround times, maintain strict patient confidentiality, and simplify documentation workflows.
             </p>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">

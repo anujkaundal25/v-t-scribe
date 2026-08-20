@@ -54,7 +54,7 @@ function Footer() {
           <div className="lg:col-span-4 space-y-4">
             {/* Logo */}
             <Link href="/" className="inline-flex items-center gap-3 group">
-              <img src="/logo.webp" alt="Logo" className="h-15 md:h-15 w-auto object-contain" />
+              <img src="new-logo.webp" alt="Logo" className="h-15 md:h-15 w-auto object-contain" />
             </Link>
 
             {/* Description */}

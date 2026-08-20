@@ -15,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "V T Scribe - Precision Medical Transcription Services",
+  title: "Scribers - Precision Medical Transcription Services",
   description:
     "99.9% accurate AAMT-compliant medical transcription services across Canada and the USA.",
   icons: {

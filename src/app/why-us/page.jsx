@@ -166,7 +166,7 @@ export default function WhyUsPage() {
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl font-black leading-tight tracking-tight">
-              Why Choose <span className="text-sky-300">V-T Scribe</span>?
+              Why Choose <span className="text-sky-300">Scribers</span>?
             </motion.h1>
 
             <motion.p variants={itemVariants} className="text-lg sm:text-xl text-sky-100/90 font-light leading-relaxed">

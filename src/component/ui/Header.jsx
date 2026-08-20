@@ -13,7 +13,7 @@ import {
 } from 'react-icons/fa';
 
 const headerData = {
-  brand: { name: "V-T Scribe", url: "/" },
+  brand: { name: "Scribers", url: "/" },
   topBar: {
     phone: "+1 (800) 123-4567",
     email: "info@vtscribe.com",
@@ -83,11 +83,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image 
-              src="/logo.webp" 
+              src="/new-logo.webp" 
               alt={headerData.brand.name} 
-              width={160}
-              height={50}
-              className="h-12 w-auto object-contain"
+              width={150}
+              height={150}
+              className="w-auto object-contain"
               priority
             />
           </Link>
