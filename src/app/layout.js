@@ -19,7 +19,7 @@ export const metadata = {
   description:
     "99.9% accurate AAMT-compliant medical transcription services across Canada and the USA.",
   icons: {
-    icon: "/fav.webp",
+    icon: "/favicon.png",
   },
 };
 
